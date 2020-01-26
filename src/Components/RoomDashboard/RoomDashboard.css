@@ -1,0 +1,86 @@
+.room_dashboard_wrapper {
+    height: 100vh;
+    min-height: 100%;
+    /* overflow: hidden; */
+    display: flex;
+    align-items: left;
+    /* justify-content: center; */
+    flex-direction: column;
+    background: #f2f2f2;
+}
+
+.roomdashboard-header-controls{
+    width: 100%;
+    background-color: #19a8ff;
+    max-height: 75px;
+    font-size: 15pt;
+    color: white;
+}
+
+.brand-dash{
+    display: inline-block;
+    margin-top:10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.header-form-group{
+    width: 70%;
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+#top-search{
+    width: 40%;
+    background-color: white;
+    border: 0px solid #0197f2 !important;
+    border-radius: .25rem !important;
+}
+
+.search-icon-header{
+    margin-right: 5px;
+}
+
+.roomdashboard-content{
+    margin: 20px;
+}
+
+.roomdashboard-content h1{
+    color: #19a8ff;
+}
+.cards-container{
+    margin-top: 30px;
+}
+
+.gauge-container{
+    width: 50%;
+    height: auto;
+}
+
+.info-container{
+    width: 50%;
+}
+
+.card-design{
+    background-color: white;
+    border-radius: .75rem;
+    -webkit-box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.17);
+    -moz-box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.17);
+    box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.17);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.room-card-container{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.info-container{
+    font-size: 12pt;
+    font-weight: 500;
+}

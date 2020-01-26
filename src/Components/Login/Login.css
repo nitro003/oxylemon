@@ -1,0 +1,92 @@
+.wrapper {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #19a8ff;
+}
+
+  .software-brand{
+      color: whitesmoke;
+  }
+
+  .navbar-brand-txt{
+      color: white;
+  }
+
+.center-content{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-box{
+    padding: 10px;
+    width: 360px;
+    height: 640px;
+    border: 1px solid white;
+}
+.login-box section {
+    margin-top: 70px;
+}
+
+.login-header{
+    font-weight: 100;
+    font-size: 30pt;
+    color: whitesmoke;
+    font-family: 'Lora', serif;
+}
+.message p {
+
+    font-weight: 1;
+    font-size: 14pt;
+    color: #b5e1fc;
+}
+
+.form-group{
+    background-color: #0197f2;
+    color: white;   
+    border-radius: .25rem;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0) !important;
+}
+
+.form-control{
+    color: white !important;
+    background-color: #0197f2 !important;
+    border: 0px solid #0197f2 !important;
+    border-radius: .25rem !important; 
+}
+
+.form-group label{
+    margin-left: 5px;
+}
+
+::placeholder {
+    color: #95d7fe !important;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:#95d7fe !important;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color:#95d7fe !important;
+  }
+
+  .login-btn{
+      width: 100%;
+      background-color: white !important;
+      color: #0197f2 !important;
+      font-weight: 500;
+  }
+
+@media (max-width: 376px){
+    .login-box{
+        border: 0;
+    }
+}
