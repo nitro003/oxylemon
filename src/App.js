@@ -10,6 +10,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import {Login} from './Components/Login/Login'
 import {Mobile} from './Components/Mobile/Mobile'
 import {RoomDashboard} from './Components/RoomDashboard/RoomDashboard'
+import {GeneralDashboard} from './Components/General Dashboard/GeneralDashboard'
 
 
 export default class App extends React.Component {
@@ -30,6 +31,7 @@ export default class App extends React.Component {
         <Route path = "/" component =  {Login} />
         <Route path = "/roomdashboard" component =  {RoomDashboard} />
         <Route path = "/mobile" component =  {Mobile} />
+        <Route path = "/gendash" component =  {GeneralDashboard} />
       </Router>
     );
   }
