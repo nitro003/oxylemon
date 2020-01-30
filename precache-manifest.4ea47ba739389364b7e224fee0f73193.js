@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0a744a23cdcfa8dd31cd295cd73fe2ae",
+    "revision": "e82dfda9e5cc632e4833158205cdc597",
     "url": "/oxylemon/index.html"
   },
   {
-    "revision": "d2536f9982e309ba815b",
+    "revision": "8aa0339e1724bb7f76c2",
     "url": "/oxylemon/static/css/2.fad5f8b4.chunk.css"
   },
   {
-    "revision": "e4a19d844685f68b72a0",
+    "revision": "aef436f01538e729b42c",
     "url": "/oxylemon/static/css/main.982b75c1.chunk.css"
   },
   {
-    "revision": "d2536f9982e309ba815b",
-    "url": "/oxylemon/static/js/2.c7350d77.chunk.js"
+    "revision": "8aa0339e1724bb7f76c2",
+    "url": "/oxylemon/static/js/2.533f7832.chunk.js"
   },
   {
     "revision": "5aa962c9ac2530580340441ee2e0842c",
-    "url": "/oxylemon/static/js/2.c7350d77.chunk.js.LICENSE"
+    "url": "/oxylemon/static/js/2.533f7832.chunk.js.LICENSE"
   },
   {
-    "revision": "e4a19d844685f68b72a0",
-    "url": "/oxylemon/static/js/main.bb7873be.chunk.js"
+    "revision": "aef436f01538e729b42c",
+    "url": "/oxylemon/static/js/main.435b49db.chunk.js"
   },
   {
     "revision": "5796af09e17f3c552eef",
