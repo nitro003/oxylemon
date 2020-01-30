@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e82dfda9e5cc632e4833158205cdc597",
+    "revision": "403e439c7b05da42940eb0029cb54141",
     "url": "/oxylemon/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/oxylemon/static/css/2.fad5f8b4.chunk.css"
   },
   {
-    "revision": "aef436f01538e729b42c",
+    "revision": "caf05edb23ecf56a129a",
     "url": "/oxylemon/static/css/main.982b75c1.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/oxylemon/static/js/2.533f7832.chunk.js.LICENSE"
   },
   {
-    "revision": "aef436f01538e729b42c",
-    "url": "/oxylemon/static/js/main.435b49db.chunk.js"
+    "revision": "caf05edb23ecf56a129a",
+    "url": "/oxylemon/static/js/main.241ee693.chunk.js"
   },
   {
     "revision": "5796af09e17f3c552eef",
