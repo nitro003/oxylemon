@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/oxylemon/static/css/main.982b75c1.chunk.css",
-    "main.js": "/oxylemon/static/js/main.241ee693.chunk.js",
-    "main.js.map": "/oxylemon/static/js/main.241ee693.chunk.js.map",
+    "main.js": "/oxylemon/static/js/main.257d5b03.chunk.js",
+    "main.js.map": "/oxylemon/static/js/main.257d5b03.chunk.js.map",
     "runtime-main.js": "/oxylemon/static/js/runtime-main.a0d1c64e.js",
     "runtime-main.js.map": "/oxylemon/static/js/runtime-main.a0d1c64e.js.map",
     "static/css/2.fad5f8b4.chunk.css": "/oxylemon/static/css/2.fad5f8b4.chunk.css",
     "static/js/2.533f7832.chunk.js": "/oxylemon/static/js/2.533f7832.chunk.js",
     "static/js/2.533f7832.chunk.js.map": "/oxylemon/static/js/2.533f7832.chunk.js.map",
     "index.html": "/oxylemon/index.html",
-    "precache-manifest.1fa56f748c1c50eaac9961723c96c94f.js": "/oxylemon/precache-manifest.1fa56f748c1c50eaac9961723c96c94f.js",
+    "precache-manifest.b1c23b08cd1398e18490377d7c383aed.js": "/oxylemon/precache-manifest.b1c23b08cd1398e18490377d7c383aed.js",
     "service-worker.js": "/oxylemon/service-worker.js",
     "static/css/2.fad5f8b4.chunk.css.map": "/oxylemon/static/css/2.fad5f8b4.chunk.css.map",
     "static/css/main.982b75c1.chunk.css.map": "/oxylemon/static/css/main.982b75c1.chunk.css.map",
@@ -23,6 +23,6 @@
     "static/css/2.fad5f8b4.chunk.css",
     "static/js/2.533f7832.chunk.js",
     "static/css/main.982b75c1.chunk.css",
-    "static/js/main.241ee693.chunk.js"
+    "static/js/main.257d5b03.chunk.js"
   ]
 }
