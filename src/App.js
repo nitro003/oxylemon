@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import ReactDOM from 'react-dom'
 
 import {Router,browserHistory} from 'react-router'
-import { Route, Link, BrowserRouter } from 'react-router-dom'
+import {HashRouter, Route, Link, BrowserRouter } from 'react-router-dom'
 
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -27,12 +27,10 @@ export default class App extends React.Component {
   }
   render(){
     return(
-      <Router history = {browserHistory}>
-        <Route path = "/" component =  {Login} />
-        <Route path = "/roomdashboard" component =  {RoomDashboard} />
-        <Route path = "/mobile" component =  {Mobile} />
+      <HashRouter basename="/">
+        <Route exact path = "/" component =  {Login} />
         <Route path = "/gendash" component =  {GeneralDashboard} />
-      </Router>
+      </HashRouter>
     );
   }
 }
