@@ -46,7 +46,7 @@ export class OxygenInfoCard extends React.Component {
                         <div style={{ fontSize: 50 }}>
                             <strong>{this.props.roomData.oxygenlevel}%</strong>
                         </div>
-                        <div style={{ fontSize: 22, margin: -5}}>
+                        <div style={{ fontSize: this.props.fsize, margin: -5}}>
                             <strong>Oxygen Level</strong>
                         </div>
                     </CircularProgressbarWithChildren>

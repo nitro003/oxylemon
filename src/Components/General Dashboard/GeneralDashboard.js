@@ -69,7 +69,8 @@ export class GeneralDashboard extends React.Component {
     updateData(result) {
         var data = result.data;
         this.setState({
-            csvfiledata: result.data
+            csvfiledata: result.data,
+            displayFloor: result.data
         });
         console.log(data);
     }
@@ -179,12 +180,27 @@ export class GeneralDashboard extends React.Component {
                         </div>
                         <div className="row">
                                 {this.state.displayFloor.map((floor,index) => (<div key={index} className="col-sm-4 card-row-sep"> 
-                                    <OxygenInfoCard key={index} roomData={floor} /> 
+                                    <OxygenInfoCard key={index} fsize={22} roomData={floor} /> 
                                     </div>) )
                                 }  
                         </div>
                     </div>
                 </BrowserView>
+                <MobileView>
+                    <div className="container-fluid content-dashboard">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h1>{this.state.currFloor}</h1>
+                            </div>
+                        </div>
+                        <div className="row">
+                                {this.state.displayFloor.map((floor,index) => (<div key={index} className="col-sm-12 card-row-sep"> 
+                                    <OxygenInfoCard key={index} fsize={17} roomData={floor} /> 
+                                    </div>) )
+                                }  
+                        </div>
+                    </div>
+                </MobileView>
           </>
         );
     }
