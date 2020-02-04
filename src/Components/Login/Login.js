@@ -40,7 +40,7 @@ export class Login extends React.Component {
 
     login_now(){
         if(this.state.username === 'admin' && this.state.password === 'admin'){
-            hashHistory.push("/oxylemon/#/gendash")
+            hashHistory.push("/gendash")
         }
         console.log('username: ',this.state.username);
     }

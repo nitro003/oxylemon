@@ -27,7 +27,7 @@ export default class App extends React.Component {
   }
   render(){
     return(
-      <HashRouter history={hashHistory} basename="/">
+      <HashRouter history={hashHistory} basename={process.env.PUBLIC_URL}>
         <Route exact path = "/" component =  {Login} />
         <Route path = "/gendash" component =  {GeneralDashboard} />
       </HashRouter>
