@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import ReactDOM from 'react-dom'
 
-import {Router,browserHistory} from 'react-router'
+import {Router,hashHistory} from 'react-router'
 import {HashRouter, Route, Link, BrowserRouter } from 'react-router-dom'
 
 import './App.css';
@@ -27,7 +27,7 @@ export default class App extends React.Component {
   }
   render(){
     return(
-      <HashRouter basename="/">
+      <HashRouter history={hashHistory} basename="/">
         <Route exact path = "/" component =  {Login} />
         <Route path = "/gendash" component =  {GeneralDashboard} />
       </HashRouter>
