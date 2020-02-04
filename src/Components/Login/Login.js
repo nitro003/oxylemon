@@ -1,5 +1,5 @@
 import React from 'react'
-import {browserHistory} from 'react-router';
+import {browserHistory,useHistory } from 'react-router';
 import logo from '../images/oxylemon.png';
 import './Login.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -39,8 +39,9 @@ export class Login extends React.Component {
     }
 
     login_now(){
-        if(this.state.username === 'admin'){
-            browserHistory.push("/oxylemon/#/gendash")
+        const history = useHistory(); 
+        if(this.state.username === 'admin' && this.state.password === 'admin'){
+            history.push("/oxylemon/#/gendash")
         }
         console.log('username: ',this.state.username);
     }
