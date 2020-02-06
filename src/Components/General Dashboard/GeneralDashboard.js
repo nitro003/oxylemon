@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import logo from '../images/oxylemon.png';
 import './GeneralDashboard.css'
 import Papa from 'papaparse';
+import Notification from 'react-web-notification'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import {OxygenInfoCard} from '../OxygenInfoCard/OxygenInfoCard'
@@ -13,16 +14,14 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import {sw} from './sw.js'
 
 import {
     BrowserView,
-    MobileView,
-    isBrowser,
-    isMobile
+    MobileView
   } from "react-device-detect";
 
-import {Mobile} from  '../Mobile/Mobile'
-import {RoomDashboard} from '../RoomDashboard/RoomDashboard'
+
 
 export class GeneralDashboard extends React.Component {
     constructor() {
@@ -32,10 +31,53 @@ export class GeneralDashboard extends React.Component {
           csvfiledata: [],
           modalUploadShow: false,
           displayFloor: [],
-          currFloor: 'All Rooms Are Being Displayed'
+          currFloor: 'All Rooms Are Being Displayed',
+          title: '',
+          options:'',
+          ignore: true
+
         };
         this.updateData = this.updateData.bind(this);
     }
+
+    handlePermissionGranted(){
+        console.log('Permission Granted');
+        this.setState({
+          ignore: false
+        });
+      }
+      
+      handlePermissionDenied(){
+        console.log('Permission Denied');
+        this.setState({
+          ignore: true
+        });
+      }
+
+      handleNotSupported(){
+        console.log('Web Notification not Supported');
+        this.setState({
+          ignore: true
+        });
+      }
+    
+      handleNotificationOnClick(e, tag){
+        console.log(e, 'Notification clicked tag:' + tag);
+      }
+    
+      handleNotificationOnError(e, tag){
+        console.log(e, 'Notification error tag:' + tag);
+      }
+    
+      handleNotificationOnClose(e, tag){
+        console.log(e, 'Notification closed tag:' + tag);
+      }
+    
+      handleNotificationOnShow(e, tag){
+        console.log(e, 'Notification shown tag:' + tag);
+      }
+    
+//NOTIFICATION FUNCTION END HERE
 
     ordinal_suffix_of(i) {
         var j = i % 10,
@@ -90,6 +132,35 @@ export class GeneralDashboard extends React.Component {
         this.setModalUploadShow(show);
     }
 
+    ringring(e){
+        if(this.state.ignore) {
+            return;
+          }
+      
+          const now = Date.now();
+      
+          const title = 'React-Web-Notification' + now;
+          const body = 'Hello' + new Date();
+          const tag = now;
+          const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
+          // const icon = 'http://localhost:3000/Notifications_button_24.png';
+      
+          // Available options
+          // See https://developer.mozilla.org/en-US/docs/Web/API/Notification/Notification
+          const options = {
+            tag: tag,
+            body: body,
+            icon: icon,
+            lang: 'en',
+            dir: 'ltr',
+            sound: './sound.mp3'  // no browsers supported https://developer.mozilla.org/en/docs/Web/API/notification/sound#Browser_compatibility
+          }
+          this.setState({
+            title: title,
+            options: options
+          });
+    }
+
     setDisplayFloor(e,pFloor){
         // this.setState({
         //     displayFloor: floor
@@ -122,6 +193,19 @@ export class GeneralDashboard extends React.Component {
     render() {
         return (
             <>
+                <Notification timeout={5000}
+                    ignore={this.state.ignore && this.state.title !== ''} 
+                    title={this.state.title} 
+                    options={this.state.options}
+                    swRegistration = {sw} 
+                    notSupported={this.handleNotSupported.bind(this)}
+                    onPermissionGranted={this.handlePermissionGranted.bind(this)}
+                    onPermissionDenied={this.handlePermissionDenied.bind(this)}
+                    onShow={this.handleNotificationOnShow.bind(this)}
+                    onClick={this.handleNotificationOnClick.bind(this)}
+                    onClose={this.handleNotificationOnClose.bind(this)}
+                    onError={this.handleNotificationOnError.bind(this)}
+                />
                 <Modal show={this.state.modalUploadShow} onHide={e => this.linkShowModalUpload(e,false)}>
                     <Modal.Header closeButton>
                     <Modal.Title>Upload Your Data Here</Modal.Title>
@@ -161,8 +245,9 @@ export class GeneralDashboard extends React.Component {
                                 <NavDropdown.Item onClick={e => this.setDisplayFloor(e,3)}>3rd Floor</NavDropdown.Item>
                                 <NavDropdown.Divider />
                             </NavDropdown>
-                            <Nav.Link onClick={e => this.linkShowModalUpload(e,true)}>Upload File
-                            </Nav.Link>
+                            <Nav.Link onClick={e => this.linkShowModalUpload(e,true)}>Upload File</Nav.Link>
+                            <Nav.Link onClick={e => this.ringring(e,true)}>Sample Notification</Nav.Link>
+
                         </Nav>
                         
                         <Form inline>
