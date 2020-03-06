@@ -15,6 +15,8 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import {sw} from './sw.js'
+import {mp3sound} from './sound.mp3'
+import {oggsound} from './sound.mp3'
 
 import {
     BrowserView,
@@ -206,6 +208,13 @@ export class GeneralDashboard extends React.Component {
                     onClose={this.handleNotificationOnClose.bind(this)}
                     onError={this.handleNotificationOnError.bind(this)}
                 />
+
+                <audio id='sound' preload='auto'>
+                    <source src={mp3sound} type='audio/mpeg' />
+                    <source src={oggsound} type='audio/ogg' />
+                    <embed hidden={true} autostart='false' loop={false} src='./sound.mp3' />
+                </audio>
+
                 <Modal show={this.state.modalUploadShow} onHide={e => this.linkShowModalUpload(e,false)}>
                     <Modal.Header closeButton>
                     <Modal.Title>Upload Your Data Here</Modal.Title>
