@@ -76,6 +76,7 @@ export class GeneralDashboard extends React.Component {
       }
     
       handleNotificationOnShow(e, tag){
+        this.playSound();
         console.log(e, 'Notification shown tag:' + tag);
       }
     
@@ -94,6 +95,10 @@ export class GeneralDashboard extends React.Component {
             return i + "rd";
         }
         return i + "th";
+    }
+
+    playSound(filename){
+        document.getElementById('sound').play();
     }
     
     handleChange = event => {
