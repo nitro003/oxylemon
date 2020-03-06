@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import logo from '../images/oxylemon.png';
 import './OxygenInfoCard.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar';
+import {OxyLemNotification} from '../OxyLemNotification/OxyLemNotification' 
+
 
 export class OxygenInfoCard extends React.Component {
     constructor(props) {
@@ -28,6 +29,7 @@ export class OxygenInfoCard extends React.Component {
         // const [message, setMessage] = useState( '' );
         return(
             <>
+            {this.props.roomData.oxygenlevel >= 0 && this.props.roomData.oxygenlevel <= 30 ? <OxyLemNotification  roomydata={this.props.roomData} />:'' }
             <div className="card-design-info">
                 <div className="info-container">
                     <h2>Room {this.props.roomData.room}</h2>

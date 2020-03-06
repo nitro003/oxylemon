@@ -1,11 +1,10 @@
 import React,{useState} from 'react'
 import logo from '../images/oxylemon.png';
-import mp3sound from '../images/sound.mp3'
-import oggsound from '../images/sound.ogg'
+
 
 import './GeneralDashboard.css'
 import Papa from 'papaparse';
-import Notification from 'react-web-notification'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import {OxygenInfoCard} from '../OxygenInfoCard/OxygenInfoCard'
@@ -17,7 +16,7 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
-import {sw} from './sw.js'
+
 
 
 import {
@@ -149,7 +148,7 @@ export class GeneralDashboard extends React.Component {
       
           const now = Date.now();
       
-          const title = 'React-Web-Notification' + now;
+          const title = '' + now;
           const body = 'Hello' + new Date();
           const tag = now;
           const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
@@ -203,27 +202,6 @@ export class GeneralDashboard extends React.Component {
     render() {
         return (
             <>
-                <Notification 
-                    timeout={5000}
-                    ignore={this.state.ignore && this.state.title !== ''} 
-                    title={this.state.title} 
-                    options={this.state.options}
-                    swRegistration = {sw} 
-                    notSupported={this.handleNotSupported.bind(this)}
-                    onPermissionGranted={this.handlePermissionGranted.bind(this)}
-                    onPermissionDenied={this.handlePermissionDenied.bind(this)}
-                    onShow={this.handleNotificationOnShow.bind(this)}
-                    onClick={this.handleNotificationOnClick.bind(this)}
-                    onClose={this.handleNotificationOnClose.bind(this)}
-                    onError={this.handleNotificationOnError.bind(this)}
-                />
-
-                <audio id='sound' preload='auto'>
-                    <source src={mp3sound} type='audio/mpeg' />
-                    <source src={oggsound}  type='audio/ogg' />
-                    <embed hidden={true} autostart='false' loop={false} src='./sound.mp3' />
-                </audio>
-
                 <Modal show={this.state.modalUploadShow} onHide={e => this.linkShowModalUpload(e,false)}>
                     <Modal.Header closeButton>
                     <Modal.Title>Upload Your Data Here</Modal.Title>
@@ -264,7 +242,7 @@ export class GeneralDashboard extends React.Component {
                                 <NavDropdown.Divider />
                             </NavDropdown>
                             <Nav.Link onClick={e => this.linkShowModalUpload(e,true)}>Upload File</Nav.Link>
-                            <Nav.Link onClick={e => this.ringring(e,true)}>Sample Notification</Nav.Link>
+                            {/* <Nav.Link onClick={e => this.ringring(e,true)}>Sample Notification</Nav.Link> */}
 
                         </Nav>
                         
@@ -282,9 +260,11 @@ export class GeneralDashboard extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                                {this.state.displayFloor.map((floor,index) => (<div key={index} className="col-sm-4 card-row-sep"> 
-                                    <OxygenInfoCard key={index} fsize={22} roomData={floor} /> 
-                                    </div>) )
+                                {this.state.displayFloor.map((floor,index) => (                                    
+                                    <div key={index} className="col-sm-4 card-row-sep"> 
+                                        <OxygenInfoCard key={index} fsize={22} roomData={floor} /> 
+                                    </div>
+                                    ) )
                                 }  
                         </div>
                     </div>
