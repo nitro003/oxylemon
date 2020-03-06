@@ -1,5 +1,8 @@
 import React,{useState} from 'react'
 import logo from '../images/oxylemon.png';
+import mp3sound from '../images/sound.mp3'
+import oggsound from '../images/sound.ogg'
+
 import './GeneralDashboard.css'
 import Papa from 'papaparse';
 import Notification from 'react-web-notification'
@@ -15,8 +18,7 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import {sw} from './sw.js'
-import {mp3sound} from './sound.mp3'
-import {oggsound} from './sound.mp3'
+
 
 import {
     BrowserView,
@@ -97,7 +99,8 @@ export class GeneralDashboard extends React.Component {
         return i + "th";
     }
 
-    playSound(filename){
+    playSound(){
+        console.log("playing....")
         document.getElementById('sound').play();
     }
     
@@ -160,7 +163,7 @@ export class GeneralDashboard extends React.Component {
             icon: icon,
             lang: 'en',
             dir: 'ltr',
-            sound: './sound.mp3'  // no browsers supported https://developer.mozilla.org/en/docs/Web/API/notification/sound#Browser_compatibility
+            sound: 'sound.mp3'  // no browsers supported https://developer.mozilla.org/en/docs/Web/API/notification/sound#Browser_compatibility
           }
           this.setState({
             title: title,
@@ -200,7 +203,8 @@ export class GeneralDashboard extends React.Component {
     render() {
         return (
             <>
-                <Notification timeout={5000}
+                <Notification 
+                    timeout={5000}
                     ignore={this.state.ignore && this.state.title !== ''} 
                     title={this.state.title} 
                     options={this.state.options}
@@ -216,7 +220,7 @@ export class GeneralDashboard extends React.Component {
 
                 <audio id='sound' preload='auto'>
                     <source src={mp3sound} type='audio/mpeg' />
-                    <source src={oggsound} type='audio/ogg' />
+                    <source src={oggsound}  type='audio/ogg' />
                     <embed hidden={true} autostart='false' loop={false} src='./sound.mp3' />
                 </audio>
 
