@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oxylemon/precache-manifest.30091423f35424a8c58ed337a8d85d42.js"
+  "/oxylemon/precache-manifest.c11ac59f0f0857262897a52b37be2831.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "46fb2455dab32fcb1929bd086df30760",
+    "revision": "8715b3f0e0fb0b84f7dda8fe300b7827",
     "url": "/oxylemon/index.html"
   },
   {
-    "revision": "9c11d5d9928a53d96afe",
+    "revision": "37b9458166daab64f3dd",
     "url": "/oxylemon/static/css/2.fad5f8b4.chunk.css"
   },
   {
-    "revision": "9a63eba489bfc852da1a",
+    "revision": "0f27f08bc38e8c1fb350",
     "url": "/oxylemon/static/css/main.982b75c1.chunk.css"
   },
   {
-    "revision": "9c11d5d9928a53d96afe",
-    "url": "/oxylemon/static/js/2.2941ba90.chunk.js"
+    "revision": "37b9458166daab64f3dd",
+    "url": "/oxylemon/static/js/2.340456fb.chunk.js"
   },
   {
     "revision": "5aa962c9ac2530580340441ee2e0842c",
-    "url": "/oxylemon/static/js/2.2941ba90.chunk.js.LICENSE"
+    "url": "/oxylemon/static/js/2.340456fb.chunk.js.LICENSE"
   },
   {
-    "revision": "9a63eba489bfc852da1a",
-    "url": "/oxylemon/static/js/main.759044ce.chunk.js"
+    "revision": "0f27f08bc38e8c1fb350",
+    "url": "/oxylemon/static/js/main.d853b48e.chunk.js"
   },
   {
     "revision": "5796af09e17f3c552eef",
@@ -54,6 +54,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "41bcc9dd06d413110d3519ae559d0270",
     "url": "/oxylemon/static/media/oxylemon.41bcc9dd.png"
+  },
+  {
+    "revision": "8db4557ba8958b591564e9525f6250c1",
+    "url": "/oxylemon/static/media/sample.8db4557b.csv"
   },
   {
     "revision": "b8da6d653abe9238189c591982726eaf",

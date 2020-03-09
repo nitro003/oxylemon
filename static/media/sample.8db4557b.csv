@@ -1,0 +1,7 @@
+floor,room,name,nurse,doctor,time,date,oxygenlevel
+floor 1,101,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,90
+floor 1,102,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,76
+floor 1,103,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,29
+floor 2,201,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,90
+floor 2,202,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,32
+floor 2,203,Juan Delacruz,Joy Legayada,Gomer Medina,18:00,01/01/2020,40
