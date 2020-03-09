@@ -11,7 +11,7 @@ export class OxyLemNotification extends React.Component {
           title: '',
           options:{
             "tag": Date.now(),
-            "body": this.props.roomydata.name,
+            "body": 'Please Check Mr./Ms. ' + this.props.roomydata.name,
             "icon": 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png',
             "lang": "en",
             "dir":  "ltr",
@@ -74,7 +74,7 @@ export class OxyLemNotification extends React.Component {
       
           const now = Date.now();
       
-          const title = 'xczczxczxc' + now;
+          const title = 'Room #' + this.props.roomydata.room + ' has reached its critical level as of' + now;
           const body = 'Hello' + new Date();
           const tag = now;
           const icon = 'http://mobilusoss.github.io/react-web-notification/example/Notifications_button_24.png';
@@ -112,7 +112,7 @@ export class OxyLemNotification extends React.Component {
                 <Notification 
                     timeout={5000}
                     ignore={this.state.ignore} 
-                    title= {'Room ' + this.props.roomydata.room} 
+                    title= {'Room #' + this.props.roomydata.room + ' has reached its critical level as of ' + this.now} 
                     options={this.state.options}
                     swRegistration = {sw} 
                     notSupported={this.handleNotSupported.bind(this)}

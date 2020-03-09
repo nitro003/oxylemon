@@ -53,7 +53,7 @@ export class Login extends React.Component {
                     <div className="login-box">
                         <div className="software-brand">
                             <img width="50" height="50" src={logo} alt="software brand missing" />
-                            <b> Oxylemon</b>
+                            <b> Oxylemon Aid</b>
                         </div>
 
                         <section class="message">

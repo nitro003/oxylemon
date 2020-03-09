@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import logo from '../images/oxylemon.png';
 
-
+import {sample_data} from '../images/sample.csv'
 import './GeneralDashboard.css'
 import Papa from 'papaparse';
 
@@ -42,6 +42,38 @@ export class GeneralDashboard extends React.Component {
         };
         this.updateData = this.updateData.bind(this);
     }
+
+    componentDidMount() {
+        console.log('Child did mount.');
+        let mockData = [{floor: "floor 1", room: "101", name: "Juan Delacruz", nurse: "Joy Legayada",
+        doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "90"},
+        {floor: "floor 2", room: "201", name: "Juan Delacruz", nurse: "Joy Legayada",
+        doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "40"},
+        {floor: "floor 3", room: "301", name: "Juan Delacruz", nurse: "Joy Legayada",
+        doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "20"},
+    ]
+        this.setState({
+            csvfiledata : mockData,
+            displayFloor : mockData
+        })
+
+    }
+
+    readTextFile = file => {
+		var rawFile = new XMLHttpRequest();
+		rawFile.open("GET", file, false);
+		rawFile.onreadystatechange = () => {
+			if (rawFile.readyState === 4) {
+				if (rawFile.status === 200 || rawFile.status == 0) {
+					var allText = rawFile.responseText;
+					this.setState({
+						csvfile: allText
+					});
+				}
+			}
+		};
+		rawFile.send(null);
+  };
 
     handlePermissionGranted(){
         console.log('Permission Granted');
@@ -107,6 +139,8 @@ export class GeneralDashboard extends React.Component {
         this.setState({
             csvfile: event.target.files[0]
         });
+        console.log(event.target.files[0])
+        
     };
     
     importCSV = () => {
@@ -116,6 +150,16 @@ export class GeneralDashboard extends React.Component {
             header: true
         });
     };
+
+    onLoadImportCSV(){
+        const { csvfile } = this.state;
+        Papa.parse(csvfile, {
+            complete: this.updateData,
+            download: true,
+            skipEmptyLines: true,
+            header: true
+        });
+    }
     
     updateData(result) {
         var data = result.data;
@@ -204,7 +248,7 @@ export class GeneralDashboard extends React.Component {
             <>
                 <Modal show={this.state.modalUploadShow} onHide={e => this.linkShowModalUpload(e,false)}>
                     <Modal.Header closeButton>
-                    <Modal.Title>Upload Your Data Here</Modal.Title>
+                    <Modal.Title>Upload Your Source File Here</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form inline>
@@ -241,7 +285,7 @@ export class GeneralDashboard extends React.Component {
                                 <NavDropdown.Item onClick={e => this.setDisplayFloor(e,3)}>3rd Floor</NavDropdown.Item>
                                 <NavDropdown.Divider />
                             </NavDropdown>
-                            <Nav.Link onClick={e => this.linkShowModalUpload(e,true)}>Upload File</Nav.Link>
+                            <Nav.Link onClick={e => this.linkShowModalUpload(e,true)}>Upload Source File</Nav.Link>
                             {/* <Nav.Link onClick={e => this.ringring(e,true)}>Sample Notification</Nav.Link> */}
 
                         </Nav>
