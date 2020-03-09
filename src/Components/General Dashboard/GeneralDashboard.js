@@ -60,22 +60,6 @@ export class GeneralDashboard extends React.Component {
 
     }
 
-    readTextFile = file => {
-		var rawFile = new XMLHttpRequest();
-		rawFile.open("GET", file, false);
-		rawFile.onreadystatechange = () => {
-			if (rawFile.readyState === 4) {
-				if (rawFile.status === 200 || rawFile.status == 0) {
-					var allText = rawFile.responseText;
-					this.setState({
-						csvfile: allText
-					});
-				}
-			}
-		};
-		rawFile.send(null);
-  };
-
     handlePermissionGranted(){
         console.log('Permission Granted');
         this.setState({
@@ -249,7 +233,7 @@ export class GeneralDashboard extends React.Component {
             <>
                 <Modal show={this.state.modalUploadShow} onHide={e => this.linkShowModalUpload(e,false)}>
                     <Modal.Header closeButton>
-                    <Modal.Title>Upload Your Source File Here</Modal.Title>
+                    <Modal.Title>Update Source File Here</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form inline>
