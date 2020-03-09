@@ -110,7 +110,7 @@ export class OxyLemNotification extends React.Component {
             <>
             { console.log("yeah ma boy",this.options) }
                 <Notification 
-                    timeout={5000}
+                    timeout={10000}
                     ignore={this.state.ignore} 
                     title= {'Room #' + this.props.roomydata.room + ' has reached its critical level as of ' + this.now} 
                     options={this.state.options}

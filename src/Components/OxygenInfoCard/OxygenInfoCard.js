@@ -29,7 +29,7 @@ export class OxygenInfoCard extends React.Component {
         // const [message, setMessage] = useState( '' );
         return(
             <>
-            {this.props.roomData.oxygenlevel >= 0 && this.props.roomData.oxygenlevel <= 30 ? <OxyLemNotification  roomydata={this.props.roomData} />:'' }
+            {/* { this.props.roomData.oxygenlevel >= 0 && this.props.roomData.oxygenlevel <= 30 ? <OxyLemNotification  roomydata={this.props.roomData} />:'' } */}
             <div className="card-design-info">
                 <div className="info-container">
                     <h2>Room {this.props.roomData.room}</h2>

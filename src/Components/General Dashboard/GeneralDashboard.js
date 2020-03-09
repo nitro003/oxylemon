@@ -8,6 +8,7 @@ import Papa from 'papaparse';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
 import {OxygenInfoCard} from '../OxygenInfoCard/OxygenInfoCard'
+import {OxyLemNotification} from '../OxyLemNotification/OxyLemNotification'
 
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -50,7 +51,7 @@ export class GeneralDashboard extends React.Component {
         {floor: "floor 2", room: "201", name: "Juan Delacruz", nurse: "Joy Legayada",
         doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "40"},
         {floor: "floor 3", room: "301", name: "Juan Delacruz", nurse: "Joy Legayada",
-        doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "20"},
+        doctor: "Gomer Medina",time: "18:00",date: "01/01/2020",oxygenlevel: "45"},
     ]
         this.setState({
             csvfiledata : mockData,
@@ -307,6 +308,7 @@ export class GeneralDashboard extends React.Component {
                                 {this.state.displayFloor.map((floor,index) => (                                    
                                     <div key={index} className="col-sm-4 card-row-sep"> 
                                         <OxygenInfoCard key={index} fsize={22} roomData={floor} /> 
+                                        { floor.oxygenlevel >= 0 && floor.oxygenlevel <= 30 ? <OxyLemNotification  roomydata={floor} />:'' }
                                     </div>
                                     ) )
                                 }  
@@ -323,6 +325,7 @@ export class GeneralDashboard extends React.Component {
                         <div className="row">
                                 {this.state.displayFloor.map((floor,index) => (<div key={index} className="col-sm-12 card-row-sep"> 
                                     <OxygenInfoCard key={index} fsize={17} roomData={floor} /> 
+                                    { floor.oxygenlevel >= 0 && floor.oxygenlevel <= 30 ? <OxyLemNotification  roomydata={floor} />:'' }
                                     </div>) )
                                 }  
                         </div>
